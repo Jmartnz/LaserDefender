@@ -7,6 +7,12 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float moveSpeed = 15.0f;
     [SerializeField] private float padding = 1.0f;
+    [SerializeField] private GameObject proyectile;
+    [SerializeField] private float proyectileSpeed = 30.0f;
+    [SerializeField] private float roundsPerSecond = 1.0f; // Fire rate
+
+
+    Coroutine fireContinously;
 
     private float xMin;
     private float xMax;
@@ -21,7 +27,15 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         Move();
-	}
+        if (Input.GetButtonDown("Fire1"))
+        {
+            fireContinously = StartCoroutine(FireContinously());
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(fireContinously);
+        }
+    }
 
     private void SetUpMoveBoundaries()
     {
@@ -41,4 +55,25 @@ public class Player : MonoBehaviour {
             Mathf.Clamp(transform.position.y + deltaY, yMin, yMax)
         );
     }
+
+    IEnumerator FireContinously()
+    {
+        while (true)
+        {
+            Shoot();
+            yield return new WaitForSeconds(GetFireRateElapsedTime());
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject laserInstance = Instantiate(proyectile, transform.position, Quaternion.identity);
+        laserInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, proyectileSpeed);
+    }
+
+    private float GetFireRateElapsedTime()
+    {
+        return (1.0f / roundsPerSecond);
+    }
+
 }
