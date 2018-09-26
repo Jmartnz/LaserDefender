@@ -51,5 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acac1b6476a632d40837fa703065d10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfigs: []
-  timeBetweenWaves: 1
+  waveConfigs:
+  - {fileID: 11400000, guid: 722badc388b92d1439dc81ef37e1a82e, type: 2}
+  - {fileID: 11400000, guid: 9f110a21d92d90645a44e8d4c73c513f, type: 2}
+  - {fileID: 11400000, guid: e92b9c0e502ddda4b9320ac65e335ffe, type: 2}
+  - {fileID: 11400000, guid: d87ebb85a055539429345f49cbf62448, type: 2}
+  - {fileID: 11400000, guid: b8ced3ffdcfe4f849936084ea0e26303, type: 2}
+  - {fileID: 11400000, guid: eec4d9cab2981c444abc1b6cbf7fdf84, type: 2}
+  timeBetweenWaves: 5
+  looping: 1
