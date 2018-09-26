@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour {
 
-    private WaveConfig waveConfig;
     private List<Transform> waypoints;
+    private float moveSpeed = 4.0f;
     private int index = 0;
 
 	// Use this for initialization
 	void Start () {
-        EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
-        waveConfig = enemySpawner.GetCurrentWave();
-        waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[index].transform.position;
 	}
 	
@@ -22,7 +19,7 @@ public class EnemyPathing : MonoBehaviour {
         {
             Vector2 currentPosition = transform.position;
             Vector2 waypointPosition = waypoints[index].transform.position;
-            transform.position = Vector2.MoveTowards(currentPosition, waypointPosition, waveConfig.GetMoveSpeed() * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(currentPosition, waypointPosition, moveSpeed * Time.deltaTime);
             if (transform.position == waypoints[index].transform.position)
             {
                 index++;
@@ -32,6 +29,16 @@ public class EnemyPathing : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetWaypoints(List<Transform> waypoints)
+    {
+        this.waypoints = waypoints;
+    }
+
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed;
     }
 
 }

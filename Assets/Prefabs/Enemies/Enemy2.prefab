@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085366397325316}
   - component: {fileID: 212590231534826112}
+  - component: {fileID: 114573254080374818}
   - component: {fileID: 114806842477594444}
   m_Layer: 0
   m_Name: Enemy2
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114573254080374818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991080719409748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8501153ef9844a44d9f42b11b7c4d600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 75
 --- !u!114 &114806842477594444
 MonoBehaviour:
   m_ObjectHideFlags: 1

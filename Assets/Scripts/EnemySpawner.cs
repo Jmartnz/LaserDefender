@@ -6,25 +6,31 @@ public class EnemySpawner : MonoBehaviour {
 
     [SerializeField] private List<WaveConfig> waveConfigs;
     [SerializeField] private float timeBetweenWaves = 1.0f;
-
-    private WaveConfig currentWave;
+    [SerializeField] private bool looping = false;
 
 	// Use this for initialization
-	void Start () {
-        StartCoroutine(SpawnAllWaves());
+	IEnumerator Start()
+    {
+        do
+        {
+            yield return StartCoroutine(SpawnAllWaves());
+        }
+        while (looping);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
     private IEnumerator SpawnAllWaves()
     {
-        for (int i = 0; i < waveConfigs.Count; i++)
+        foreach (WaveConfig waveConfig in waveConfigs)
         {
-            currentWave = waveConfigs[i];
-            StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+            // yield return StartCoroutine(SpawnAllEnemiesInWave(waveConfig));
+            // Use timeBetweenWaves as delay between each wave
+            StartCoroutine(SpawnAllEnemiesInWave(waveConfig));
             yield return new WaitForSeconds(timeBetweenWaves);
         }
     }
@@ -33,17 +39,15 @@ public class EnemySpawner : MonoBehaviour {
     {
         for (int i = 0; i < waveConfig.GetNumberOfEnemies(); i++)
         {
-            Instantiate(
+            var enemy = Instantiate(
                 waveConfig.GetEnemyPrefab(),
                 waveConfig.GetWaypoints()[0].transform.position,
                 Quaternion.identity);
+            EnemyPathing enemyPathing = enemy.GetComponent<EnemyPathing>();
+            enemyPathing.SetWaypoints(waveConfig.GetWaypoints());
+            enemyPathing.SetMoveSpeed(waveConfig.GetMoveSpeed());
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
-    }
-
-    public WaveConfig GetCurrentWave()
-    {
-        return this.currentWave;
     }
 
 }
