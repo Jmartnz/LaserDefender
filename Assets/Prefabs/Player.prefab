@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50067741370747016}
   - component: {fileID: 58704238116881680}
   - component: {fileID: 114310053660034600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   proyectile: {fileID: 1914231986709402, guid: baf383e4e23a48c49b6e591294790089, type: 2}
   proyectileSpeed: 30
   roundsPerSecond: 10
+  fireSound: {fileID: 0}
 --- !u!212 &212957474350208856
 SpriteRenderer:
   m_ObjectHideFlags: 1

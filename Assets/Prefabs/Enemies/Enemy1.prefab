@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58523537421127920}
   - component: {fileID: 114203904689778186}
   - component: {fileID: 114806842477594444}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,7 @@ MonoBehaviour:
   health: 100
   proyectile: {fileID: 1914231986709402, guid: 1f9a2c81df0263e40a9314a893d9a247, type: 2}
   proyectileSpeed: 15
+  proyectileDamage: 25
   minTimeBetweenShoots: 1
   maxTimeBetweenShoots: 5
 --- !u!114 &114806842477594444

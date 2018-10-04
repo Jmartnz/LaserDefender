@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50100527209167026}
   - component: {fileID: 61053092170589112}
   - component: {fileID: 114144173445603290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcce1b4b6b77595488442e166f25470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
   hitsEnemies: 0
+  damage: 50
 --- !u!212 &212917510749715634
 SpriteRenderer:
   m_ObjectHideFlags: 1
