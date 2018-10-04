@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour {
 
-    [SerializeField] private bool hitsEnemies = true;
     [SerializeField] private int damage = 25;
 
     public void SetDamage(int damage)
