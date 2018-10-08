@@ -10,11 +10,12 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private int proyectileDamage = 25;
 	[SerializeField] private float minTimeBetweenShoots = 0.5f;
 	[SerializeField] private float maxTimeBetweenShoots = 3.0f;
+	[SerializeField] private AudioClip fireSound;
 	[SerializeField] private AudioClip impactSound;
-    [SerializeField] private GameObject explosionParticle;
+	[SerializeField] private GameObject explosionParticle;
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		StartCoroutine(ShootAndWait());
 	}
 	
@@ -35,23 +36,24 @@ public class Enemy : MonoBehaviour {
 
 	private void Shoot()
 	{
+		AudioSource.PlayClipAtPoint(fireSound, transform.position, 1.0f);
 		GameObject laserInstance = Instantiate(proyectile, transform.position, Quaternion.identity);
 		laserInstance.GetComponent<DamageDealer>().SetDamage(proyectileDamage);
 		laserInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -proyectileSpeed);
 	}
 
-    public void TakeHit(int damage)
-    {
-        health -= damage;
-        if (health <= 0) Die();
-    }
+	public void TakeHit(int damage)
+	{
+		health -= damage;
+		if (health <= 0) Die();
+	}
 
-    private void Die()
-    {
-        AudioSource.PlayClipAtPoint(impactSound, transform.position);
-        GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
-        Destroy(explosion, 1.0f);
-        Destroy(gameObject);
-    }
+	private void Die()
+	{
+		AudioSource.PlayClipAtPoint(impactSound, transform.position);
+		GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+		Destroy(explosion, 1.0f);
+		Destroy(gameObject);
+	}
 
 }

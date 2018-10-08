@@ -96,6 +96,7 @@ MonoBehaviour:
   proyectileDamage: 30
   minTimeBetweenShoots: 0.5
   maxTimeBetweenShoots: 3
+  fireSound: {fileID: 8300000, guid: a159e66ba50876a46bb5c50829415a93, type: 3}
   impactSound: {fileID: 8300000, guid: 31d43461da62d144c9d69404fe7999a1, type: 3}
   explosionParticle: {fileID: 1191296413969326, guid: 50f986847d6167343b7e3c301d692f4c,
     type: 2}
