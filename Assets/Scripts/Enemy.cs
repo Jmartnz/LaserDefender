@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private float minTimeBetweenShoots = 0.5f;
 	[SerializeField] private float maxTimeBetweenShoots = 3.0f;
 	[SerializeField] private AudioClip fireSound;
-	[SerializeField] private AudioClip impactSound;
+	[SerializeField] private AudioClip deathSound;
 	[SerializeField] private GameObject explosionParticle;
 
 	// Use this for initialization
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour {
 
 	private void Die()
 	{
-		AudioSource.PlayClipAtPoint(impactSound, transform.position);
+		AudioSource.PlayClipAtPoint(deathSound, transform.position, 1.0f);
 		GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
 		Destroy(explosion, 1.0f);
 		Destroy(gameObject);

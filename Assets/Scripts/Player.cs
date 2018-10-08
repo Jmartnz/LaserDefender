@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	[SerializeField] private int health = 100;
+    [Header("Player")]
+    [SerializeField] private int health = 100;
 	[SerializeField] private float moveSpeed = 15.0f;
 	[SerializeField] private float padding = 1.0f;
-	[SerializeField] private GameObject proyectile;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private GameObject explosionParticle;
+
+    [Header("Proyectile")]
+	[SerializeField] private GameObject proyectilePrefab;
 	[SerializeField] private float proyectileSpeed = 30.0f;
 	[SerializeField] private float roundsPerSecond = 1.0f; // Fire rate
 	[SerializeField] private AudioClip fireSound;
@@ -42,8 +47,16 @@ public class Player : MonoBehaviour {
 	public void TakeHit(int damage)
 	{
 		health -= damage;
-		if (health <= 0) Destroy(gameObject);
+		if (health <= 0) Die();
 	}
+
+    private void Die()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1.0f);
+        GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        Destroy(explosion, 1.0f);
+        Destroy(gameObject);
+    }
 
 	private void SetUpMoveBoundaries()
 	{
@@ -75,8 +88,8 @@ public class Player : MonoBehaviour {
 
 	private void Shoot()
 	{
-		AudioSource.PlayClipAtPoint(fireSound, transform.position, 0.25f);
-		GameObject laserInstance = Instantiate(proyectile, transform.position, Quaternion.identity);
+		AudioSource.PlayClipAtPoint(fireSound, transform.position, 1.0f);
+		GameObject laserInstance = Instantiate(proyectilePrefab, transform.position, Quaternion.identity);
 		laserInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, proyectileSpeed);
 	}
 
