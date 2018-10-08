@@ -94,7 +94,7 @@ MonoBehaviour:
   padding: 1
   proyectile: {fileID: 1914231986709402, guid: baf383e4e23a48c49b6e591294790089, type: 2}
   proyectileSpeed: 30
-  roundsPerSecond: 10
+  roundsPerSecond: 20
   fireSound: {fileID: 0}
 --- !u!212 &212957474350208856
 SpriteRenderer:
