@@ -92,7 +92,7 @@ MonoBehaviour:
   health: 500
   moveSpeed: 15
   padding: 1
-  deathSound: {fileID: 8300000, guid: 31d43461da62d144c9d69404fe7999a1, type: 3}
+  deathSound: {fileID: 8300000, guid: 8bbdd39c16ad2de43adde5e39b5d6df7, type: 3}
   explosionParticle: {fileID: 1191296413969326, guid: 50f986847d6167343b7e3c301d692f4c,
     type: 2}
   proyectilePrefab: {fileID: 1914231986709402, guid: baf383e4e23a48c49b6e591294790089,
