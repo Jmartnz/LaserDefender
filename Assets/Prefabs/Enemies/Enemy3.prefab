@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  points: 75
   proyectile: {fileID: 1914231986709402, guid: 1f9a2c81df0263e40a9314a893d9a247, type: 2}
   proyectileSpeed: 30
   proyectileDamage: 50

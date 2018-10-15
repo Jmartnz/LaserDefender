@@ -167,6 +167,11 @@ Prefab:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82241800615892588, guid: 057c12c965a0419469906910e5f60d45,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 057c12c965a0419469906910e5f60d45, type: 2}
   m_IsPrefabAsset: 0

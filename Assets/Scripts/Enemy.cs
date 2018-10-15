@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	[SerializeField] private int health = 100;
+    [SerializeField] private int points = 100;
 	[SerializeField] private GameObject proyectile;
 	[SerializeField] private float proyectileSpeed = 15.0f;
 	[SerializeField] private int proyectileDamage = 25;
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(deathSound, transform.position, 1.0f);
 		GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
 		Destroy(explosion, 1.0f);
+        FindObjectOfType<LevelManager>().AddToScore(points);
 		Destroy(gameObject);
 	}
 
