@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    [SerializeField] private AudioClip levelClip;
+    [SerializeField] private int delaySeconds = 3; // Seconds to realize you are dead
 
     // Use this for initialization
     private void Start() {
-        
+
     }
 
     public void LoadStartMenu()
@@ -24,6 +24,13 @@ public class LevelManager : MonoBehaviour {
 
     public void GameOver()
     {
+        // Give the player some time to think about it...
+        StartCoroutine(LoadGameOverScreen());
+    }
+
+    IEnumerator LoadGameOverScreen()
+    {
+        yield return new WaitForSeconds(delaySeconds);
         SceneManager.LoadScene("Game Over");
     }
 

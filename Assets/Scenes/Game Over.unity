@@ -156,12 +156,12 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 97df406e39b534e83ae3ce20c4157423, type: 3}
+      objectReference: {fileID: 8300000, guid: cff82de8820034536bc3dc4395b2ce00, type: 3}
     - target: {fileID: 114125902330101008, guid: 057c12c965a0419469906910e5f60d45,
         type: 2}
       propertyPath: levelClip
       value: 
-      objectReference: {fileID: 8300000, guid: 97df406e39b534e83ae3ce20c4157423, type: 3}
+      objectReference: {fileID: 8300000, guid: cff82de8820034536bc3dc4395b2ce00, type: 3}
     - target: {fileID: 82241800615892588, guid: 057c12c965a0419469906910e5f60d45,
         type: 2}
       propertyPath: Loop
@@ -286,32 +286,32 @@ Prefab:
     - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
@@ -348,25 +348,157 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
-      propertyPath: m_fontColor.r
+      propertyPath: m_text
+      value: PLAY AGAIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_text
+      value: QUIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991593975408298, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224152711677595926, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624818923435688, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_text
+      value: 'GAME OVER
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
+      propertyPath: m_text
+      value: BETTER LUCK NEXT TIME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontColor.r
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
       propertyPath: m_fontColor.g
+      value: 0.47070634
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontColor.b
+      value: 0.14509803
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954573997320886, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontColor32.rgba
+      value: 4280580337
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_fontColor.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
+      propertyPath: m_fontColor.g
+      value: 0.9161045
+      objectReference: {fileID: 0}
+    - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
       propertyPath: m_fontColor.b
-      value: 0.9582815
+      value: 0.11792451
       objectReference: {fileID: 0}
     - target: {fileID: 114490685995765172, guid: 78d3b66110a0eba47ac8d812cf725cbe,
         type: 2}
       propertyPath: m_fontColor32.rgba
-      value: 4294246144
+      value: 4280216063
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78d3b66110a0eba47ac8d812cf725cbe, type: 2}

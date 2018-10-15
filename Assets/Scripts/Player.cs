@@ -56,6 +56,7 @@ public class Player : MonoBehaviour {
         GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
         Destroy(explosion, 1.0f);
         Destroy(gameObject);
+        FindObjectOfType<LevelManager>().GameOver();
     }
 
 	private void SetUpMoveBoundaries()
