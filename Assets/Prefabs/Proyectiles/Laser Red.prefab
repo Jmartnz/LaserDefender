@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 50100527209167026}
   - component: {fileID: 61053092170589112}
   - component: {fileID: 114144173445603290}
-  m_Layer: 10
-  m_Name: Laser
+  m_Layer: 11
+  m_Name: Laser Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcce1b4b6b77595488442e166f25470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsEnemies: 1
   damage: 50
 --- !u!212 &212917510749715634
 SpriteRenderer:
@@ -133,10 +132,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1538082221
+  m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1c54ecc99a051446963a9292d47040f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 944910e8d89534a429b5a2c8b7857133, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
