@@ -207,7 +207,7 @@ Prefab:
     - target: {fileID: 82241800615892588, guid: 057c12c965a0419469906910e5f60d45,
         type: 2}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 82241800615892588, guid: 057c12c965a0419469906910e5f60d45,
         type: 2}
@@ -367,7 +367,18 @@ Prefab:
         type: 2}
       propertyPath: waveConfigs.Array.data[11]
       value: 
-      objectReference: {fileID: 11400000, guid: 43f7b7f8ddc12e140aaf9d9b6c7d523a,
+      objectReference: {fileID: 11400000, guid: 540e512cab0677a44be16a8825febf36,
+        type: 2}
+    - target: {fileID: 114851235200958834, guid: 48e2eb34809318a4c896b0856fe57892,
+        type: 2}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114851235200958834, guid: 48e2eb34809318a4c896b0856fe57892,
+        type: 2}
+      propertyPath: waveConfigs.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 540e512cab0677a44be16a8825febf36,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48e2eb34809318a4c896b0856fe57892, type: 2}
