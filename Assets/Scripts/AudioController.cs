@@ -19,7 +19,7 @@ namespace Assets.Scripts
         {
             audioSource.Play();
             audioSource.volume = 0f;
-            while (audioSource.volume < 1)
+            while (audioSource.volume < 0.10f)
             {
                 audioSource.volume += Time.deltaTime / FadeTime;
                 yield return null;
