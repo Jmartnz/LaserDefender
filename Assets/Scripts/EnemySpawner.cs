@@ -4,38 +4,45 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-    [SerializeField] private List<WaveConfig> waveConfigs;
-    [SerializeField] private float timeBetweenWaves = 1.0f;
+    [SerializeField] private List<WaveConfig> waves;
+
+    [Header("Configuration")]
+    [SerializeField] private float defaultTimeBetweenWaves = 5.0f;
     [SerializeField] private bool looping = false;
-    [SerializeField] private bool active = true;
+    [SerializeField] private bool inactive = false;
+
+    private WaveConfig currentWave;
+    private int spawnedEnemiesCounter = 0;
 
     // Use this for initialization
     IEnumerator Start()
     {
-        if (active)
+        if (!inactive)
         {
-            do
-            {
-                yield return StartCoroutine(SpawnAllWaves());
-            }
+            do { yield return StartCoroutine(SpawnAllWaves()); }
             while (looping);
         }
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
 	}
 
     private IEnumerator SpawnAllWaves()
     {
-        foreach (WaveConfig waveConfig in waveConfigs)
+        foreach (WaveConfig wave in waves)
         {
-            // yield return StartCoroutine(SpawnAllEnemiesInWave(waveConfig));
-            // Use timeBetweenWaves as delay between each wave
-            StartCoroutine(SpawnAllEnemiesInWave(waveConfig));
-            yield return new WaitForSeconds(timeBetweenWaves);
+            currentWave = wave;
+
+            if (wave.IsSeparated())
+            {
+                StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+                do { yield return null; }
+                while (AreEnemiesLeft());
+            }
+            else
+            {
+                StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+                yield return new WaitForSeconds(defaultTimeBetweenWaves + currentWave.GetMercyTime());
+            }
+
+            ResetSpawnedEnemiesCounter();
         }
     }
 
@@ -50,8 +57,21 @@ public class EnemySpawner : MonoBehaviour {
             EnemyPathing enemyPathing = enemy.GetComponent<EnemyPathing>();
             enemyPathing.SetWaypoints(waveConfig.GetWaypoints());
             enemyPathing.SetMoveSpeed(waveConfig.GetMoveSpeed());
+            spawnedEnemiesCounter++;
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
+    }
+
+    private bool AreEnemiesLeft()
+    {
+        bool existEnemiesOnScene = FindObjectsOfType<Enemy>().Length > 0;
+        bool existEnemiesToSpawn = spawnedEnemiesCounter < currentWave.GetNumberOfEnemies();
+        return existEnemiesOnScene || existEnemiesToSpawn;
+    }
+
+    private void ResetSpawnedEnemiesCounter()
+    {
+        spawnedEnemiesCounter = 0;
     }
 
 }
