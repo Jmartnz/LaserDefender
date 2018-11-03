@@ -25,14 +25,8 @@ public class DamageDealer : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // TODO Improve inheritance or interface to apply damage to both enemy and player
-        Enemy enemy = collider.GetComponent<Enemy>();
-        if (enemy != null)
-            collider.GetComponent<Enemy>().TakeHit(damage);
-        Player player = collider.GetComponent<Player>();
-        if (player != null)
-            collider.GetComponent<Player>().TakeHit(damage);
-        
+        IDamageReceiver damageReceiver = collider.GetComponent<IDamageReceiver>();
+        damageReceiver?.TakeHit(damage);
         Destroy(gameObject);
     }
 

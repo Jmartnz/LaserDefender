@@ -1,29 +1,27 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts
+public static class AudioController
 {
-    public static class AudioController
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
     {
-        public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+        float startVolume = audioSource.volume;
+        while (audioSource.volume > 0)
         {
-            float startVolume = audioSource.volume;
-            while (audioSource.volume > 0)
-            {
-                audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-                yield return null;
-            }
-            audioSource.Stop();
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+            yield return null;
         }
-        public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
+        audioSource.Stop();
+    }
+
+    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
+    {
+        audioSource.Play();
+        audioSource.volume = 0f;
+        while (audioSource.volume < 1.0f)
         {
-            audioSource.Play();
-            audioSource.volume = 0f;
-            while (audioSource.volume < 0.10f)
-            {
-                audioSource.volume += Time.deltaTime / FadeTime;
-                yield return null;
-            }
+            audioSource.volume += Time.deltaTime / FadeTime;
+            yield return null;
         }
     }
 }

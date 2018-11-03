@@ -373,6 +373,16 @@ Prefab:
       propertyPath: m_fontColor32.rgba
       value: 4294246144
       objectReference: {fileID: 0}
+    - target: {fileID: 114960978390354144, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960978390354144, guid: 78d3b66110a0eba47ac8d812cf725cbe,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78d3b66110a0eba47ac8d812cf725cbe, type: 2}
   m_IsPrefabAsset: 0
@@ -527,6 +537,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4416110107743352, guid: 136bf6f4eee6efc4e9610d0ef0c0726c, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20660277663719338, guid: 136bf6f4eee6efc4e9610d0ef0c0726c,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20660277663719338, guid: 136bf6f4eee6efc4e9610d0ef0c0726c,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20660277663719338, guid: 136bf6f4eee6efc4e9610d0ef0c0726c,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

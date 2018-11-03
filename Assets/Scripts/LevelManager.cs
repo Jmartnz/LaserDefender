@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Assets.Scripts;
 
 public class LevelManager : MonoBehaviour {
 
-    [SerializeField] private int levelChangeDelayInSeconds = 3; // Seconds to realize you are dead
+    // Seconds to realize you are dead
+    [SerializeField] private int levelChangeDelayInSeconds = 3; 
 
     private AudioSource audioSource;
     private int score = 0;
@@ -19,34 +19,26 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadStartMenu()
     {
+        StopAllCoroutines();
         SceneManager.LoadScene(0);
     }
 
     public void LoadGame()
     {
+        StopAllCoroutines();
         StartCoroutine(LoadLevel("Game"));
-    }
-
-    IEnumerator LoadLevel(string name)
-    {
-        yield return StartCoroutine(AudioController.FadeOut(audioSource, 1));
-        SceneManager.LoadScene(name);
     }
 
     public void GameOver()
     {
+        StopAllCoroutines();
         // Give the player some time to think about it...
         StartCoroutine(LoadGameOverScreen());
     }
 
-    IEnumerator LoadGameOverScreen()
-    {
-        yield return StartCoroutine(AudioController.FadeOut(audioSource, levelChangeDelayInSeconds));
-        SceneManager.LoadScene("Game Over");
-    }
-
     public void ExitGame()
     {
+        StopAllCoroutines();
         Application.Quit();
     }
 
@@ -60,4 +52,15 @@ public class LevelManager : MonoBehaviour {
         return score;
     }
 
+    IEnumerator LoadLevel(string name)
+    {
+        yield return StartCoroutine(AudioController.FadeOut(audioSource, 1));
+        SceneManager.LoadScene(name);
+    }
+
+    IEnumerator LoadGameOverScreen()
+    {
+        yield return StartCoroutine(AudioController.FadeOut(audioSource, levelChangeDelayInSeconds));
+        SceneManager.LoadScene("Game Over");
+    }
 }

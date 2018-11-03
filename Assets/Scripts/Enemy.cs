@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour, IDamageReceiver {
 
 	[SerializeField] private int health = 100;
     [SerializeField] private int points = 100;
@@ -19,18 +19,13 @@ public class Enemy : MonoBehaviour {
 	void Start () {
 		StartCoroutine(ShootAndWait());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	IEnumerator ShootAndWait()
 	{
 		while (health > 0)
 		{
-			float timeToWait = Random.Range(minTimeBetweenShoots, maxTimeBetweenShoots);
-			yield return new WaitForSeconds(timeToWait);
+			float timeBetweenShots = Random.Range(minTimeBetweenShoots, maxTimeBetweenShoots);
+			yield return new WaitForSeconds(timeBetweenShots);
 			Shoot();
 		}
 	}

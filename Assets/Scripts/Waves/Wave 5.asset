@@ -17,3 +17,5 @@ MonoBehaviour:
   timeBetweenSpawns: 0.2
   numberOfEnemies: 20
   moveSpeed: 10
+  mercyTime: 0
+  isSeparated: 0

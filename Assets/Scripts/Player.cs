@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IDamageReceiver {
 
     [Header("Player")]
     [SerializeField] private int health = 100;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     [Header("Proyectile")]
 	[SerializeField] private GameObject proyectilePrefab;
 	[SerializeField] private float proyectileSpeed = 30.0f;
-	[SerializeField] private float roundsPerSecond = 1.0f; // Fire rate
+	[SerializeField] private float roundsPerSecond = 1.0f;
 	[SerializeField] private AudioClip fireSound;
 
 
@@ -103,5 +103,11 @@ public class Player : MonoBehaviour {
 	{
 		return (1.0f / roundsPerSecond);
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Enemy"))
+            Die();
+    }
 
 }
